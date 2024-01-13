@@ -30,6 +30,9 @@ function Footer() {
       </Text>
 
       <Spacer />
+      <Anchor href="https://github.com/penghuili/Encrypt37Free" target="_blank">
+        Source code
+      </Anchor>
       <Anchor href="https://buy.stripe.com/14k3fYcz633kb2oeV1" target="_blank">
         Buy me a beer 🍺
       </Anchor>
