@@ -2,6 +2,7 @@ import { Box, Button, Text, TextArea } from 'grommet';
 import React, { useState } from 'react';
 import { RiFileCopyLine, RiLockLine } from 'react-icons/ri';
 import Beer from '../../../components/Beer';
+import MessageWrapper from '../../../components/MessageWrapper';
 import { getMessageContent } from '../../../lib/encryption-helper';
 import { encryptMessage } from '../../../shared/js/encryption';
 import HorizontalCenter from '../../../shared/react-pure/HorizontalCenter';
@@ -70,7 +71,7 @@ function EncryptTextWithKeypair({ onToast }) {
       {!!encryptedText && (
         <Box>
           <Text weight="bold">Encrypted text</Text>
-          {encryptedText}
+          <MessageWrapper>{encryptedText}</MessageWrapper>
         </Box>
       )}
 

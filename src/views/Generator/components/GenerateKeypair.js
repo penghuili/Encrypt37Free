@@ -1,18 +1,11 @@
 import { Button, Heading, Text } from 'grommet';
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import MessageWrapper from '../../../components/MessageWrapper';
 import { generateKeypair } from '../../../shared/js/encryption';
 import Divider from '../../../shared/react-pure/Divider';
 import HorizontalCenter from '../../../shared/react-pure/HorizontalCenter';
 import Spacer from '../../../shared/react-pure/Spacer';
 import copyToClipboard from '../../../shared/react/copyToClipboard';
-
-const KeyWrapper = styled.div`
-  overflow-x: auto;
-`;
-const Pre = styled.pre`
-  white-space: pre-wrap;
-`;
 
 function GenerateKeypair({ onToast }) {
   const [publicKey, setPublicKey] = useState('');
@@ -53,9 +46,7 @@ function GenerateKeypair({ onToast }) {
               margin="0 0 0 1rem"
             />
           </HorizontalCenter>
-          <KeyWrapper>
-            <Pre>{publicKey}</Pre>
-          </KeyWrapper>
+          <MessageWrapper>{publicKey}</MessageWrapper>
 
           <Spacer size="3rem" />
 
@@ -70,9 +61,7 @@ function GenerateKeypair({ onToast }) {
               margin="0 0 0 1rem"
             />
           </HorizontalCenter>
-          <KeyWrapper>
-            <Pre>{privateKey}</Pre>
-          </KeyWrapper>
+          <MessageWrapper>{privateKey}</MessageWrapper>
         </>
       )}
     </>
