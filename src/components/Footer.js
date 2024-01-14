@@ -20,7 +20,7 @@ function Footer() {
         provider an encrypted storage.
       </Text>
       <Text>
-        Everything is encrypted by the battle tested algorithm PGP{' '}
+        Everything is encrypted by the battle tested algorithm{' '}
         <Anchor
           label="PGP"
           href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy"
