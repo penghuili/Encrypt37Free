@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { RiFileCopyLine, RiLockUnlockLine } from 'react-icons/ri';
 import Beer from '../../../components/Beer';
 import { getMessageContent } from '../../../lib/encryption-helper';
-import { decryptMessage } from '../../../shared/js/encryption';
+import { decryptMessageAsymmetric } from '../../../shared/js/encryption';
 import HorizontalCenter from '../../../shared/react-pure/HorizontalCenter';
 import Spacer from '../../../shared/react-pure/Spacer';
 import copyToClipboard from '../../../shared/react/copyToClipboard';
@@ -44,7 +44,7 @@ function DecryptTextWithPublicKey({ onToast }) {
             try {
               const cleanPrivateKey = getMessageContent(privateKey.trim());
               const cleanEncryptedText = getMessageContent(encryptedText.trim());
-              const decrypted = await decryptMessage(cleanPrivateKey, cleanEncryptedText);
+              const decrypted = await decryptMessageAsymmetric(cleanPrivateKey, cleanEncryptedText);
               setText(decrypted);
               onToast('Decrypted!');
             } catch (error) {
