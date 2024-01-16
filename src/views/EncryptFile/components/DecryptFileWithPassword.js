@@ -2,7 +2,7 @@ import { Box, Button, FileInput, Text } from 'grommet';
 import React, { useState } from 'react';
 import { RiDownloadLine, RiLockUnlockLine } from 'react-icons/ri';
 import Beer from '../../../components/Beer';
-import { decryptFile } from '../../../shared/js/encryption';
+import { decryptFileSymmetric } from '../../../shared/js/encryption';
 import HorizontalCenter from '../../../shared/react-pure/HorizontalCenter';
 import PasswordInput from '../../../shared/react-pure/PasswordInput';
 import Spacer from '../../../shared/react-pure/Spacer';
@@ -40,7 +40,7 @@ function DecryptFileWithPassword({ onToast }) {
           onClick={async () => {
             try {
               const unit8Array = await inputFileToUnit8Array(encryptedFile);
-              const decrypted = await decryptFile(unit8Array, password);
+              const decrypted = await decryptFileSymmetric(password, unit8Array);
               const blob = new Blob([decrypted]);
               setFile(blob);
               onToast('Decrypted!');
