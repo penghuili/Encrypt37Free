@@ -4,7 +4,7 @@ import { RiFileCopyLine, RiLockLine } from 'react-icons/ri';
 import Beer from '../../../components/Beer';
 import MessageWrapper from '../../../components/MessageWrapper';
 import { getMessageContent } from '../../../lib/encryption-helper';
-import { encryptMessage } from '../../../shared/js/encryption';
+import { encryptMessageAsymmetric } from '../../../shared/js/encryption';
 import HorizontalCenter from '../../../shared/react-pure/HorizontalCenter';
 import Spacer from '../../../shared/react-pure/Spacer';
 import copyToClipboard from '../../../shared/react/copyToClipboard';
@@ -44,7 +44,7 @@ function EncryptTextWithKeypair({ onToast }) {
           onClick={async () => {
             try {
               const cleanPrivateKey = getMessageContent(publicKey.trim());
-              const encrpted = await encryptMessage(cleanPrivateKey, text);
+              const encrpted = await encryptMessageAsymmetric(cleanPrivateKey, text);
               setEncryptedText(`e37:${encrpted}`);
               onToast('Encrypted!');
             } catch (error) {
