@@ -3,7 +3,7 @@ import HTTP from '../../shared/react/HTTP';
 
 export async function fetchCloudfrontDistributions() {
   try {
-    const data = await HTTP.get(apps.admin.name, `/v1/cloudfront-distributions`);
+    const data = await HTTP.get(apps.Admin.name, `/v1/cloudfront-distributions`);
 
     return { data, error: null };
   } catch (error) {
@@ -13,7 +13,7 @@ export async function fetchCloudfrontDistributions() {
 
 export async function uploadFile({ file, bucket, path, cacheControl, cloudfrontId }) {
   try {
-    const data = await HTTP.post(apps.admin.name, `/v1/upload`, {
+    const data = await HTTP.post(apps.Admin.name, `/v1/upload`, {
       file,
       bucket,
       path,
@@ -29,7 +29,7 @@ export async function uploadFile({ file, bucket, path, cacheControl, cloudfrontI
 
 export async function checkDomainAvailability(domainName) {
   try {
-    const data = await HTTP.post(apps.admin.name, `/v1/domains`, {
+    const data = await HTTP.post(apps.Admin.name, `/v1/domains`, {
       domainName,
     });
 
