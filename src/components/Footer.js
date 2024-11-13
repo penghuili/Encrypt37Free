@@ -1,5 +1,6 @@
 import { Anchor, Text } from 'grommet';
 import React from 'react';
+
 import ContentWrapper from '../shared/react-pure/ContentWrapper';
 import Divider from '../shared/react-pure/Divider';
 import Spacer from '../shared/react-pure/Spacer';
@@ -39,8 +40,8 @@ function Footer() {
       <Text>
         Want to save your encrypted words and files to cloud, so it's easy to sync on different
         devices? Check{' '}
-        <Anchor href="https://encrypt37.com" target="_blank">
-          Encrypt37
+        <Anchor href="https://notenote.cc" target="_blank">
+          notenote.cc
         </Anchor>
       </Text>
       <Text>
